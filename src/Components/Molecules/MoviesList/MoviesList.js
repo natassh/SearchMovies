@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Movie } from '../Molecules/Movie/Movie';
+import { Movie } from '../Movie/Movie';
 
 export class MoviesList extends React.Component {
   static propTypes = {
