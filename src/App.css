@@ -5,4 +5,11 @@
 .SearchForm-wrapper {
   display: flex;
   justify-content: center;
+  margin-bottom: 2.25rem;
+}
+.list-articles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
 }

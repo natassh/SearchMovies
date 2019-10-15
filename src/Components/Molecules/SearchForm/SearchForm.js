@@ -11,18 +11,21 @@ export class SearchForm extends Component {
     inputMovie: ''
   };
 
+  // Save the text you entered in the input to the state of the component
   _handleChange = e => {
     this.setState({ inputMovie: e.target.value });
   };
 
   _handleSubmit = e => {
     e.preventDefault();
+    //alert(this.state.inputMovie);
     const { inputMovie } = this.state;
     const endpoint = `http://www.omdbapi.com/?apikey=${API_KEY}&s=${inputMovie}`;
 
-    fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${inputMovie}`)
+    fetch(endpoint)
       .then(res => res.json())
       .then(results => {
+        //console.log(results);
         const { Search, totalResults } = results;
         console.log(Search, totalResults);
         this.props.onResults(Search);
