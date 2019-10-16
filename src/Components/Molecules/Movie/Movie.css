@@ -3,9 +3,22 @@
   max-width: 30rem;
   margin-bottom: 1.2rem;
 }
+.card a {
+  text-decoration: none;
+  color: #363636;
+}
+.card a:hover {
+  border: 0.5px solid grey;
+}
+
 .card__title {
   color: #363636;
   font-size: 1.5rem;
+  transition: all 0.2s ease-in-out;
+}
+.card a:hover .card__title {
+  text-decoration: underline;
+  transform: scale(1.1);
 }
 .card__text {
   margin: 0;
@@ -14,7 +27,7 @@
   color: #4a4a4a;
 }
 .card__content {
-  max-width: 60%;
+  max-width: 80%;
   margin: 0 auto;
 }
 @media screen and (max-width: 768px) {

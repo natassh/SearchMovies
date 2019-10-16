@@ -1,0 +1,23 @@
+.card--detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 2.25rem;
+}
+.card--detail .button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.card--detail .card__title {
+  font-size: 2rem;
+}
+.card__subtitle {
+  text-align: center;
+}
+.card--detail .card__text {
+  text-align: center;
+  line-height: 1.56rem;
+}

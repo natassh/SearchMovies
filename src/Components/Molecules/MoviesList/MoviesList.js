@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { Movie } from '../Movie/Movie';
 
 export class MoviesList extends React.Component {
-  static propTypes = {
-    movies: PropTypes.array
-  };
+  componentWillUnmount() {
+    console.log('me he desmontado');
+  }
 
   // Utilizamos el state de results y devolver el mapeado que hacemos para cada una de las peliculas que tiene el array
   render() {
@@ -20,6 +20,7 @@ export class MoviesList extends React.Component {
               title={movie.Title}
               year={movie.Year}
               poster={movie.Poster}
+              id={movie.imdbID}
             />
           );
         })}
@@ -27,3 +28,7 @@ export class MoviesList extends React.Component {
     );
   }
 }
+
+MoviesList.propTypes = {
+  movies: PropTypes.array
+};
