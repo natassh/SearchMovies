@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { throwStatement } from '@babel/types';
 
 import './Detail.css';
 
