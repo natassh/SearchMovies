@@ -30,8 +30,9 @@ export class Detail extends React.Component {
   // vamos a utilizar la id que recibimos por las props para llamar a un metodo _fetchMovie
   // (que es el metodo que recuperar toda la info de la pelicula):
   componentDidMount() {
-    const { id } = this.props;
-    this._fetchMovie({ id });
+    console.log(this.props);
+    const { movieId } = this.props.match.params;
+    this._fetchMovie({ id: movieId });
   }
   render() {
     // Destructuramos los datos que queremos coger de la api, los nombres son los que me muestra la api y aparecen en el console. Fijarse en las mayusculas xq salen cm la api los quiere poner
@@ -55,5 +56,10 @@ export class Detail extends React.Component {
 }
 
 Detail.propTypes = {
-  id: PropTypes.string
+  match: PropTypes.shape({
+    params: PropTypes.object,
+    isExact: PropTypes.bool,
+    path: PropTypes.string,
+    url: PropTypes.string
+  })
 };

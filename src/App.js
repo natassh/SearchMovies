@@ -1,4 +1,5 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 
 import { Home } from './pages/Home/Home';
 import { Detail } from './pages/Detail/Detail';
@@ -7,16 +8,14 @@ import './App.css';
 
 class App extends React.Component {
   render() {
-    // Controlamos si entramos en la pagina de DETALLE o en la HOME
-    // Creamos una nueva ruta enrutador con la direccion actual de la pagina
-    const url = new URL(document.location);
-    const Page = url.searchParams.has('id') ? (
-      <Detail id={url.searchParams.get('id')} />
-    ) : (
-      <Home />
+    return (
+      <div className="App">
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/detail/:movieId" component={Detail} />
+        </Switch>
+      </div>
     );
-
-    return <div className="App">{Page}</div>;
   }
 }
 

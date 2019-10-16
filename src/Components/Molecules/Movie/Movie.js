@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
+import { Link } from 'react-router-dom';
+
 import './Movie.css';
 
 export class Movie extends React.Component {
@@ -7,7 +10,7 @@ export class Movie extends React.Component {
     const { title, year, poster, id } = this.props;
     return (
       <article className="card">
-        <a href={`?id=${id}`}>
+        <Link to={`/detail/${id}`}>
           <figure className="image">
             <img src={poster} alt={title} />
           </figure>
@@ -15,7 +18,7 @@ export class Movie extends React.Component {
             <h3 className="card__title">{title}</h3>
             <p className="card__text">{year}</p>
           </div>
-        </a>
+        </Link>
       </article>
     );
   }
