@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import { Home } from './pages/Home/Home';
 import { Detail } from './pages/Detail/Detail';
+import { PageError } from './pages/PageError/PageError';
 
 import './App.css';
 
@@ -13,6 +14,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/detail/:movieId" component={Detail} />
+          <Route component={PageError} />
         </Switch>
       </div>
     );

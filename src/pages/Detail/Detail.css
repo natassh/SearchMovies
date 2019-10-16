@@ -7,6 +7,9 @@
   margin: 0 auto;
   margin-top: 2.25rem;
 }
+.card--detail .button {
+  color: #fff;
+}
 .card--detail .button:hover {
   text-decoration: underline;
   cursor: pointer;
