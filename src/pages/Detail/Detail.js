@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { ButtonBackToHome } from '../../Components/Atoms/ButtonBackToHome/ButtonBackToHome';
+import { ButtonBack } from '../../Components/Atoms/ButtonBackToHome/ButtonBack';
 
 import './Detail.css';
 
@@ -23,10 +24,14 @@ export class Detail extends React.Component {
       });
   }
 
-  _goBack() {
+  _handleGoBack = e => {
+    e.preventDefault();
+    console.log(this.props.history);
+    const { goBack } = this.props.history;
     // Utilizaremos el objeto Back de metodo History del Window
-    window.history.back();
-  }
+    // window.history.back();
+    goBack();
+  };
 
   // Cuando el componente se ha renderizado al menos una vez,
   // vamos a utilizar la id que recibimos por las props para llamar a un metodo _fetchMovie
@@ -42,6 +47,7 @@ export class Detail extends React.Component {
     return (
       <article className="card card--detail">
         <ButtonBackToHome />
+        <ButtonBack onClick={this._handleGoBack} />
         <h1 className="card__title">{Title}</h1>
         <figure className="image">
           <img src={Poster} alt={Title} />
