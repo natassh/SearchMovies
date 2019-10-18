@@ -25,7 +25,7 @@ export class SearchForm extends Component {
       .then(results => {
         //console.log(results);
         const { Search = [], totalResults = '0' } = results;
-        console.log(Search, totalResults);
+        //console.log(Search, totalResults);
         this.props.onResults(Search);
       });
   };
