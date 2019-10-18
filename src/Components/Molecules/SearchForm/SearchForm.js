@@ -18,7 +18,7 @@ export class SearchForm extends Component {
   _handleSubmit = e => {
     e.preventDefault();
     const { inputMovie } = this.state;
-    const endpoint = `http://www.omdbapi.com/?apikey=${API_KEY}&s=${inputMovie}`;
+    const endpoint = `https://www.omdbapi.com/?apikey=${API_KEY}&s=${inputMovie}`;
 
     fetch(endpoint)
       .then(res => res.json())

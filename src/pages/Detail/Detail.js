@@ -14,25 +14,25 @@ export class Detail extends React.Component {
   };
 
   _fetchMovie({ id }) {
-    const endpoint = `http://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`;
+    const endpoint = `https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`;
     fetch(endpoint)
       .then(res => res.json())
       .then(movie => {
-        console.log({ movie });
+        //console.log({ movie });
         this.setState({ movie });
       });
   }
 
   _handleGoBack = e => {
     e.preventDefault();
-    console.log(this.props.history);
+    //console.log(this.props.history);
     const { goBack } = this.props.history;
     // window.history.back();
     goBack();
   };
 
   componentDidMount() {
-    console.log(this.props);
+    //console.log(this.props);
     const { movieId } = this.props.match.params;
     this._fetchMovie({ id: movieId });
   }
