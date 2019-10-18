@@ -5,7 +5,7 @@ export const PageError = () => {
   return (
     <>
       <h1 className="title">404!</h1>
-      <h2>La pagina no existe</h2>
+      <h2>Sorry, the page doesn't exist</h2>
       <ButtonBackToHome />
     </>
   );

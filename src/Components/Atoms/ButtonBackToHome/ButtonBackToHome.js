@@ -6,7 +6,7 @@ import './ButtonBackToHome.css';
 export const ButtonBackToHome = () => {
   return (
     <Link className="button button__fixed" to="/">
-      Volver a la portada
+      Back to home
     </Link>
   );
 };

@@ -4,7 +4,7 @@ import './ButtonBackToHome.css';
 export const ButtonBack = ({ onClick }) => {
   return (
     <button onClick={onClick} className="button button__fixed">
-      Volver
+      Back
     </button>
   );
 };

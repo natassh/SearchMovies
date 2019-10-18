@@ -11,14 +11,12 @@ export class SearchForm extends Component {
     inputMovie: ''
   };
 
-  // Save the text you entered in the input to the state of the component
   _handleChange = e => {
     this.setState({ inputMovie: e.target.value });
   };
 
   _handleSubmit = e => {
     e.preventDefault();
-    //alert(this.state.inputMovie);
     const { inputMovie } = this.state;
     const endpoint = `http://www.omdbapi.com/?apikey=${API_KEY}&s=${inputMovie}`;
 
@@ -26,14 +24,13 @@ export class SearchForm extends Component {
       .then(res => res.json())
       .then(results => {
         //console.log(results);
-        // Asignamos valores por defecto para cuando venga undefined en la busqueda xq la pelicula no existe, no me de error por el .lenght que hago de Search en el App.js
         const { Search = [], totalResults = '0' } = results;
         console.log(Search, totalResults);
         this.props.onResults(Search);
       });
   };
 
-  handleCuandoCAmbieElDatoDelInput = inputData => {
+  _handleWhenTheInputDataChanges = inputData => {
     this.setState({ inputMovie: inputData });
   };
 
@@ -47,7 +44,7 @@ export class SearchForm extends Component {
           type="text"
           placeholder="Movie to search..."
         /> */}
-        <Input cuandoCambies={this.handleCuandoCAmbieElDatoDelInput} />
+        <Input whenYouChange={this._handleWhenTheInputDataChanges} />
         <Button text="Search" />
       </form>
     );

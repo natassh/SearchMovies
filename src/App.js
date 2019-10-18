@@ -24,5 +24,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-// Tenemos todas las peliculas en el state porque teniamos el metodo _handleResults que se lo pasabamos al componente SEarchForm y que al recibir los resultados de la api se ejecutaba (este metodo _handleResults) actualizando el state de este componente (lo que tenemos en la linea 11)

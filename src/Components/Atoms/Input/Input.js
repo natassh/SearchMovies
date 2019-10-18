@@ -7,10 +7,10 @@ export class Input extends React.Component {
   };
 
   _handleChange = e => {
-    const { cuandoCambies } = this.props;
+    const { whenYouChange } = this.props;
 
     const inputData = e.target.value;
-    cuandoCambies(inputData);
+    whenYouChange(inputData);
     this.setState({ data: inputData });
   };
   render() {

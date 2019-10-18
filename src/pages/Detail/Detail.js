@@ -19,7 +19,6 @@ export class Detail extends React.Component {
       .then(res => res.json())
       .then(movie => {
         console.log({ movie });
-        // GUardamos toda la info en el state movie del componente Detail
         this.setState({ movie });
       });
   }
@@ -28,21 +27,16 @@ export class Detail extends React.Component {
     e.preventDefault();
     console.log(this.props.history);
     const { goBack } = this.props.history;
-    // Utilizaremos el objeto Back de metodo History del Window
     // window.history.back();
     goBack();
   };
 
-  // Cuando el componente se ha renderizado al menos una vez,
-  // vamos a utilizar la id que recibimos por las props para llamar a un metodo _fetchMovie
-  // (que es el metodo que recuperar toda la info de la pelicula):
   componentDidMount() {
     console.log(this.props);
     const { movieId } = this.props.match.params;
     this._fetchMovie({ id: movieId });
   }
   render() {
-    // Destructuramos los datos que queremos coger de la api, los nombres son los que me muestra la api y aparecen en el console. Fijarse en las mayusculas xq salen cm la api los quiere poner
     const { Title, Actors, Poster, Metascore, Plot } = this.state.movie;
     return (
       <article className="card card--detail">
