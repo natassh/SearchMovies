@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { ButtonBackToHome } from '../../Components/Atoms/ButtonBackToHome/ButtonBackToHome';
 import { ButtonBack } from '../../Components/Atoms/ButtonBackToHome/ButtonBack';
+import Emoji from '../../Components/Atoms/Emoji/Emoji';
 
 import './Detail.css';
 
@@ -39,17 +40,19 @@ export class Detail extends React.Component {
   render() {
     const { Title, Actors, Poster, Metascore, Plot } = this.state.movie;
     return (
-      <article className="card card--detail">
-        <ButtonBackToHome />
-        <ButtonBack onClick={this._handleGoBack} />
-        <h1 className="card__title">{Title}</h1>
+      <article className="movie movie--detail">
+        <h1 className="movie__title">{Title}</h1>
         <figure className="image">
           <img src={Poster} alt={Title} />
         </figure>
 
-        <h3 className="card__subtitle">{Actors}</h3>
-        <p className="card__text">{Metascore}</p>
-        <p className="card__text">{Plot}</p>
+        <h3 className="movie__subtitle">{Actors}</h3>
+        <p className="movie__text">
+          <Emoji symbol="⭐️" label="star" /> {Metascore}
+        </p>
+        <p className="movie__text">{Plot}</p>
+        <ButtonBackToHome />
+        <ButtonBack onClick={this._handleGoBack} />
       </article>
     );
   }

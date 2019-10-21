@@ -2,6 +2,7 @@ import React from 'react';
 import { Title } from '../../Components/Atoms/Title/Title';
 import { SearchForm } from '../../Components/Molecules/SearchForm/SearchForm';
 import { MoviesList } from '../../Components/Molecules/MoviesList/MoviesList';
+import Emoji from '../../Components/Atoms/Emoji/Emoji';
 
 export class Home extends React.Component {
   state = { usedSearch: false, results: [] };
@@ -13,7 +14,9 @@ export class Home extends React.Component {
   _renderResults = () => {
     const { results } = this.state;
     return results.length === 0 ? (
-      <p>Sorry 😉 Results not found!</p>
+      <p>
+        Sorry <Emoji symbol="😉" label="wink emoji" /> Results not found!
+      </p>
     ) : (
       <MoviesList movies={results} />
     );

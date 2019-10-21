@@ -24,6 +24,7 @@ export class SearchForm extends Component {
       .then(res => res.json())
       .then(results => {
         //console.log(results);
+        /* eslint no-unused-vars: "off" */
         const { Search = [], totalResults = '0' } = results;
         //console.log(Search, totalResults);
         this.props.onResults(Search);

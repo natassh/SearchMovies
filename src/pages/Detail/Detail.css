@@ -1,4 +1,4 @@
-.card--detail {
+.movie--detail {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,20 +7,20 @@
   margin: 0 auto;
   margin-top: 2.25rem;
 }
-.card--detail .button {
+.movie--detail .button {
   color: #fff;
 }
-.card--detail .button:hover {
+.movie--detail .button:hover {
   text-decoration: underline;
   cursor: pointer;
 }
-.card--detail .card__title {
+.movie--detail .movie__title {
   font-size: 2rem;
 }
-.card__subtitle {
+.movie__subtitle {
   text-align: center;
 }
-.card--detail .card__text {
+.movie--detail .movie__text {
   text-align: center;
   line-height: 1.56rem;
 }
